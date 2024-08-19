@@ -1,0 +1,131 @@
+@use "../../../default_mixin_setting/_main_mixin" as *;
+// Merriweather Sans
+// Shippori Mincho
+// Noto Sans JP
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho&display=swap');
+
+// font-familyセット
+  $merriweather-sans:'Merriweather Sans',Sans-serif;
+  $shippori-mincho:'Shippori Mincho',Sans-serif;
+  $noto-sans-jp:'Noto Sans JP',Sans-serif;
+
+// colorセット
+  $light-green:#F0F5E1;
+  $grass-green:#96C519;
+  $moss-green:#468459;
+  $dark-green:#0C4324;
+
+  body{
+    margin:0;
+    padding:0;
+    font-size:1rem;
+    font-family: $noto-sans-jp;
+  }
+
+  // ヘッダー
+  header{
+    position:relative;
+    @include wd-ht-setting(100%,100%);
+
+    .carousel-container{
+      @include wd-ht-setting(100%,100%);
+      position:relative;
+    }
+
+    // カルーセル全体のdiv
+    .carousel{
+      @include wd-ht-setting(100%,100%);
+      z-index:-2;
+      visibility: hidden;
+
+      img{
+        width:100%;
+        height:100%;
+        background-size:contain;
+    
+      }
+      
+      &.slick-initialized{
+        visibility:visible;
+      }
+    }
+  }
+
+  progress {
+    width: 8%;
+    height: 1%;
+    border-radius: 15px;
+    position:absolute;
+    right:2%;
+    bottom:4%;
+  }
+  
+  progress::-webkit-progress-bar {
+     border-radius: 15px;
+     background-color:white;
+  }
+  
+  progress::-webkit-progress-value {
+    border-radius: 15px;
+    background-color:$moss-green;
+  }
+  
+  // progress::-moz-progress-bar {
+  //    border-radius: 15px;
+  // }
+  
+  // progress::-ms-fill {
+  //    border-radius: 15px;
+  // }
+  
+
+  @keyframes progress{
+    from{
+      width:100%;
+    }
+
+    to{
+      width:0%;
+    }
+  }
+
+
+
+.head-nav{
+  display:flex;
+  width:100%;
+  justify-content:space-between;
+  align-items:center;
+  position:absolute;
+  top:0;
+
+  // ロゴのCSS
+  .logo-img{
+    margin-left:20px;
+  }
+
+  // ナビゲーションのCSS
+  nav{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    margin-right:20px;
+
+    // ボタン
+    button{
+      background-color:$dark-green;
+      height:30px;
+      width:160px;
+    }
+
+    .nav-link{
+      text-decoration:none;
+      color:white;
+    }
+  }
+}
+
+
+
+
+
