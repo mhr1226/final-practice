@@ -140,12 +140,12 @@ progress::-webkit-progress-value {
 
 #courses {
   margin: 5% auto 0 auto;
-  padding: 0 5% 10% 5%;
+  padding: 0 5% 5% 5%;
   background-image: url("/final-practice/images/courses-img.svg"), url("/final-practice/images/courses-back2.svg"), url("/final-practice/images/courses-back.svg");
   background-repeat: no-repeat;
-  background-size: 30%, 25%, 100%;
+  background-size: 30%, 25%, cover;
   background-position-x: 15%, 100%, center;
-  background-position-y: 32%, 90%, center;
+  background-position-y: 31%, 90%, center;
 }
 #courses .courses-head {
   padding-top: 15%;
@@ -159,6 +159,9 @@ progress::-webkit-progress-value {
   justify-content: space-around;
   margin: 5% 10%;
 }
+#courses #courses-main-container h3 {
+  color: #0C4324;
+}
 #courses #courses-main-container .courses-head {
   padding: 4% 0;
 }
@@ -166,6 +169,9 @@ progress::-webkit-progress-value {
   width: 37%;
   height: 100%;
   padding: 0;
+}
+#courses #courses-main-container .courses-left li, #courses #courses-main-container .courses-right li {
+  line-height: 2.5rem;
 }
 #courses #courses-main-container .courses-left .courses-img-container, #courses #courses-main-container .courses-right .courses-img-container {
   width: 100%;
@@ -181,6 +187,45 @@ progress::-webkit-progress-value {
 }
 #courses .courses-btn button {
   background-color: #F0F5E1;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#voice .voice-head {
+  width: 100%;
+  position: relative;
+}
+#voice .voice-head img {
+  width: 100%;
+}
+#voice .voice-head div:nth-of-type(2) {
+  position: absolute;
+  bottom: -25%;
+  text-align: center;
+  width: 100%;
+}
+#voice .voice-head div:nth-of-type(2) img {
+  width: 30%;
+}
+#voice .voice-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 10% 10% 5% 10%;
+}
+#voice .voice-container img {
+  width: 80%;
+  text-align: center;
+}
+#voice .voice-container .voice-content {
+  width: 30%;
+}
+#voice .voice-btn {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+#voice .voice-btn button {
+  background-color: white;
   border: 1px solid black;
   border-radius: 5px;
 }

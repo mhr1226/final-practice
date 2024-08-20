@@ -165,12 +165,12 @@
 
 #courses{
   margin:5% auto 0 auto;
-  padding:0 5% 10% 5%;
+  padding:0 5% 5% 5%;
   background-image:url('/final-practice/images/courses-img.svg'),url('/final-practice/images/courses-back2.svg'),url('/final-practice/images/courses-back.svg');
   background-repeat:no-repeat;
-  background-size:30%,25%,100%;
+  background-size:30%,25%,cover;
   background-position-x:15%,100%,center;
-  background-position-y:32%,90%,center;
+  background-position-y:31%,90%,center;
 
 
   .courses-head{
@@ -187,6 +187,10 @@
     justify-content:space-around;
     margin:5% 10%;
 
+    h3{
+      color:$dark-green;
+    }
+
     .courses-head{
       padding:4% 0;
     }
@@ -194,6 +198,10 @@
     .courses-left,.courses-right{
       @include wd-ht-setting(37%,100%);
       padding:0;
+
+      li{
+        line-height:2.5rem;
+      }
 
       .courses-img-container{
         @include wd-ht-setting(100%,100%);
@@ -219,6 +227,54 @@
       margin:2%;
       button{
         background-color:$light-green;
+        border:1px solid black;
+        border-radius:5px;
+      }
+    }
+}
+
+// voice
+#voice{
+
+  .voice-head{
+    width:100%;
+    position:relative;
+    img{
+      width:100%;
+    }
+    div:nth-of-type(2){
+      position:absolute;
+      bottom:-25%;
+      text-align:center;
+      width:100%;
+      img{
+        width:30%;
+      }
+    }
+    }
+
+    .voice-container{
+      display:flex;
+      justify-content:space-around;
+      margin:10% 10% 5% 10%;
+
+      img{
+        width:80%;
+        text-align:center;
+      }
+
+      .voice-content{
+        width:30%;
+      }
+    }
+    
+    .voice-btn{
+      display:flex;
+      justify-content:center;
+      margin:5%;
+
+      button{
+        background-color: white;
         border:1px solid black;
         border-radius:5px;
       }
