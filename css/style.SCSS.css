@@ -58,23 +58,6 @@ progress::-webkit-progress-value {
   background-color: #468459;
 }
 
-@-webkit-keyframes progress {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0%;
-  }
-}
-
-@keyframes progress {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0%;
-  }
-}
 .head-nav {
   display: flex;
   width: 100%;
@@ -100,5 +83,105 @@ progress::-webkit-progress-value {
 .head-nav nav .nav-link {
   text-decoration: none;
   color: white;
+}
+
+#concept {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5%;
+  background-image: url("/final-practice/images/concept-back1.svg"), url("/final-practice/images/concept-icon2.svg");
+  background-size: 35%, 30%;
+  background-position-x: 15%, 100%;
+  background-position-y: 18%, 100%;
+  background-repeat: no-repeat;
+}
+#concept .concept-left, #concept .concept-right {
+  padding: 5% 0;
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#concept .concept-left {
+  padding-left: 17%;
+  gap: 5%;
+  align-items: flex-start;
+}
+#concept .concept-left h2 {
+  color: #468459;
+  line-height: 2.5rem;
+}
+#concept .concept-left div {
+  width: 100%;
+}
+#concept .concept-left div:nth-of-type(4) {
+  display: flex;
+  justify-content: flex-end;
+}
+#concept .concept-left button {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-right: 10%;
+}
+#concept .concept-right {
+  padding: 7% 12% 13% 2%;
+  align-items: left;
+}
+#concept .concept-right div {
+  width: 100%;
+}
+#concept .concept-right img {
+  width: 100%;
+}
+
+#courses {
+  margin: 5% auto 0 auto;
+  padding: 0 5% 10% 5%;
+  background-image: url("/final-practice/images/courses-img.svg"), url("/final-practice/images/courses-back2.svg"), url("/final-practice/images/courses-back.svg");
+  background-repeat: no-repeat;
+  background-size: 30%, 25%, 100%;
+  background-position-x: 15%, 100%, center;
+  background-position-y: 32%, 90%, center;
+}
+#courses .courses-head {
+  padding-top: 15%;
+  text-align: center;
+}
+#courses .courses-head img {
+  width: 30%;
+}
+#courses #courses-main-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 10%;
+}
+#courses #courses-main-container .courses-head {
+  padding: 4% 0;
+}
+#courses #courses-main-container .courses-left, #courses #courses-main-container .courses-right {
+  width: 37%;
+  height: 100%;
+  padding: 0;
+}
+#courses #courses-main-container .courses-left .courses-img-container, #courses #courses-main-container .courses-right .courses-img-container {
+  width: 100%;
+  height: 100%;
+}
+#courses #courses-main-container .courses-left .courses-img-container img, #courses #courses-main-container .courses-right .courses-img-container img {
+  width: 100%;
+}
+#courses .courses-btn {
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+}
+#courses .courses-btn button {
+  background-color: #F0F5E1;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=style.SCSS.css.map */

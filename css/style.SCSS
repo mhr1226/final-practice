@@ -69,25 +69,6 @@
     border-radius: 15px;
     background-color:$moss-green;
   }
-  
-  // progress::-moz-progress-bar {
-  //    border-radius: 15px;
-  // }
-  
-  // progress::-ms-fill {
-  //    border-radius: 15px;
-  // }
-  
-
-  @keyframes progress{
-    from{
-      width:100%;
-    }
-
-    to{
-      width:0%;
-    }
-  }
 
 
 
@@ -123,6 +104,125 @@
       color:white;
     }
   }
+}
+
+#concept{
+  display:flex;
+  justify-content:space-around;
+  width:100%;
+  height:100%;
+  margin-bottom:5%;
+  background-image:url('/final-practice/images/concept-back1.svg'),url('/final-practice/images/concept-icon2.svg');
+  background-size:35%,30%;
+  background-position-x:15%,100%;
+  background-position-y:18%,100%;
+  background-repeat:no-repeat;
+
+  
+  .concept-left,.concept-right{
+    padding:5% 0;
+    @include wd-ht-setting(33%,100%);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .concept-left{
+    padding-left:17%;
+    gap:5%;
+    align-items:flex-start;
+
+    h2{
+      color:$moss-green;
+      line-height:2.5rem;
+
+
+    }
+    div{
+      width:100%;
+      &:nth-of-type(4){
+        display:flex;
+        justify-content:flex-end;
+      }
+    }
+    button{
+      background-color:white;
+      border:1px solid black;
+      border-radius:5px;
+      margin-right:10%;
+    }
+  }
+  .concept-right{
+    padding:7% 12% 13% 2%;
+    align-items:left;
+    div{
+      width:100%;
+    }
+    img{
+      width:100%;
+    }
+  }
+}
+
+#courses{
+  margin:5% auto 0 auto;
+  padding:0 5% 10% 5%;
+  background-image:url('/final-practice/images/courses-img.svg'),url('/final-practice/images/courses-back2.svg'),url('/final-practice/images/courses-back.svg');
+  background-repeat:no-repeat;
+  background-size:30%,25%,100%;
+  background-position-x:15%,100%,center;
+  background-position-y:32%,90%,center;
+
+
+  .courses-head{
+    padding-top:15%;
+    text-align:center;
+
+    img{
+      width:30%;
+    }
+  }
+
+  #courses-main-container{
+    display:flex;
+    justify-content:space-around;
+    margin:5% 10%;
+
+    .courses-head{
+      padding:4% 0;
+    }
+
+    .courses-left,.courses-right{
+      @include wd-ht-setting(37%,100%);
+      padding:0;
+
+      .courses-img-container{
+        @include wd-ht-setting(100%,100%);
+        img{
+        width:100%;
+      }
+      }
+      
+    }
+
+  //   .courses-left{
+  //     margin-left:15%;
+  //   }
+
+  // .courses-right{
+  //   margin-right:10%;
+  // }
+
+  }
+  .courses-btn{
+      display:flex;
+      justify-content:center;
+      margin:2%;
+      button{
+        background-color:$light-green;
+        border:1px solid black;
+        border-radius:5px;
+      }
+    }
 }
 
 
