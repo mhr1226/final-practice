@@ -4,6 +4,10 @@
 // Noto Sans JP
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho&display=swap');
 
+
+*{
+  box-sizing:border-box;
+}
 // font-familyセット
   $merriweather-sans:'Merriweather Sans',Sans-serif;
   $shippori-mincho:'Shippori Mincho',Sans-serif;
@@ -18,7 +22,8 @@
   body{
     margin:0;
     padding:0;
-    font-size:1rem;
+    // font-size:clamp(12px,1rem,16px);
+    font-size:clamp(8px,1rem,16px);
     font-family: $noto-sans-jp;
   }
 
@@ -39,8 +44,8 @@
       visibility: hidden;
 
       img{
-        width:100%;
-        height:100%;
+        width:clamp(300px,100%,1280px);
+        height:clamp(150px,80%,350px);
         background-size:contain;
     
       }
@@ -82,7 +87,14 @@
 
   // ロゴのCSS
   .logo-img{
-    margin-left:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left:1%;
+    width:25%;
+    img{
+      width:clamp(80px,100%,200px);
+    }
   }
 
   // ナビゲーションのCSS
@@ -111,23 +123,21 @@
   justify-content:space-around;
   width:100%;
   height:100%;
-  margin-bottom:5%;
+  padding:15%;
   background-image:url('/final-practice/images/concept-back1.svg'),url('/final-practice/images/concept-icon2.svg');
   background-size:35%,30%;
-  background-position-x:15%,100%;
-  background-position-y:18%,100%;
+  background-position-x:10%,100%;
+  background-position-y:32%,95%;
   background-repeat:no-repeat;
 
   
   .concept-left,.concept-right{
-    padding:5% 0;
-    @include wd-ht-setting(33%,100%);
+    @include wd-ht-setting(50%,100%);
     display:flex;
     flex-direction:column;
     justify-content:center;
   }
   .concept-left{
-    padding-left:17%;
     gap:5%;
     align-items:flex-start;
 
@@ -152,9 +162,9 @@
     }
   }
   .concept-right{
-    padding:7% 12% 13% 2%;
-    align-items:left;
-    div{
+    align-content:center;
+    margin-top:10%;
+    > div{
       width:100%;
     }
     img{
@@ -264,7 +274,7 @@
       }
 
       .voice-content{
-        width:30%;
+        width:33%;
       }
     }
     
@@ -279,6 +289,10 @@
         border-radius:5px;
       }
     }
+}
+
+footer{
+  
 }
 
 

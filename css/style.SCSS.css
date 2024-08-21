@@ -7,10 +7,14 @@
   min-height: 100vh;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-size: 1rem;
+  font-size: clamp(8px, 1rem, 16px);
   font-family: "Noto Sans JP", Sans-serif;
 }
 
@@ -31,8 +35,8 @@ header .carousel {
   visibility: hidden;
 }
 header .carousel img {
-  width: 100%;
-  height: 100%;
+  width: clamp(300px, 100%, 1280px);
+  height: clamp(150px, 80%, 350px);
   background-size: contain;
 }
 header .carousel.slick-initialized {
@@ -67,7 +71,14 @@ progress::-webkit-progress-value {
   top: 0;
 }
 .head-nav .logo-img {
-  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1%;
+  width: 25%;
+}
+.head-nav .logo-img img {
+  width: clamp(80px, 100%, 200px);
 }
 .head-nav nav {
   display: flex;
@@ -90,23 +101,21 @@ progress::-webkit-progress-value {
   justify-content: space-around;
   width: 100%;
   height: 100%;
-  margin-bottom: 5%;
+  padding: 15%;
   background-image: url("/final-practice/images/concept-back1.svg"), url("/final-practice/images/concept-icon2.svg");
   background-size: 35%, 30%;
-  background-position-x: 15%, 100%;
-  background-position-y: 18%, 100%;
+  background-position-x: 10%, 100%;
+  background-position-y: 32%, 95%;
   background-repeat: no-repeat;
 }
 #concept .concept-left, #concept .concept-right {
-  padding: 5% 0;
-  width: 33%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 #concept .concept-left {
-  padding-left: 17%;
   gap: 5%;
   align-items: flex-start;
 }
@@ -128,10 +137,10 @@ progress::-webkit-progress-value {
   margin-right: 10%;
 }
 #concept .concept-right {
-  padding: 7% 12% 13% 2%;
-  align-items: left;
+  align-content: center;
+  margin-top: 10%;
 }
-#concept .concept-right div {
+#concept .concept-right > div {
   width: 100%;
 }
 #concept .concept-right img {
@@ -217,7 +226,7 @@ progress::-webkit-progress-value {
   text-align: center;
 }
 #voice .voice-container .voice-content {
-  width: 30%;
+  width: 33%;
 }
 #voice .voice-btn {
   display: flex;
