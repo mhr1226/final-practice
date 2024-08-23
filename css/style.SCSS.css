@@ -70,28 +70,34 @@ progress::-webkit-progress-value {
   position: absolute;
   top: 0;
 }
-.head-nav .logo-img {
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3%;
+  margin-right: 20px;
+  width: 75%;
+}
+
+.head-btn {
+  background-color: #0C4324;
+  height: 30px;
+  width: 160px;
+}
+
+.logo-img {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 1%;
   width: 25%;
 }
-.head-nav .logo-img img {
+.logo-img img {
   width: clamp(80px, 100%, 200px);
 }
-.head-nav nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin-right: 20px;
-}
-.head-nav nav button {
-  background-color: #0C4324;
-  height: 30px;
-  width: 160px;
-}
-.head-nav nav .nav-link {
+
+.nav-link {
   text-decoration: none;
   color: white;
 }
@@ -219,14 +225,20 @@ progress::-webkit-progress-value {
 #voice .voice-container {
   display: flex;
   justify-content: space-around;
-  margin: 10% 10% 5% 10%;
+  margin: 10% 5% 5% 5%;
+  text-align: center;
+}
+#voice .voice-container h3 {
+  color: #0C4324;
 }
 #voice .voice-container img {
   width: 80%;
-  text-align: center;
 }
 #voice .voice-container .voice-content {
   width: 33%;
+}
+#voice .voice-img {
+  text-align: center;
 }
 #voice .voice-btn {
   display: flex;
@@ -237,5 +249,100 @@ progress::-webkit-progress-value {
   background-color: white;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+footer {
+  padding: 10% 0 0 0;
+  background-image: url("/final-practice/images/courses-back.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.footer-head {
+  display: flex;
+  justify-content: center;
+  padding: 3% 5%;
+}
+.footer-head img {
+  width: 32%;
+}
+
+.foot-container {
+  display: flex;
+  gap: 3%;
+  margin: 0 5%;
+}
+
+.foot-left {
+  width: 50%;
+  height: 100%;
+}
+
+.foot-right {
+  width: 50%;
+  padding: 1%;
+}
+
+.foot-left img {
+  width: 100%;
+}
+.foot-left ul {
+  list-style: none;
+  padding: 0;
+}
+.foot-left h3 {
+  color: #468459;
+}
+.foot-left span {
+  font-size: 0.85rem;
+}
+
+.foot-right {
+  display: flex;
+  align-items: center;
+}
+
+.copy-right {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: #468459;
+  color: white;
+}
+
+.foot-btn {
+  padding: 3%;
+  margin: 5% 0 0 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #1B9240;
+  font-family: "Noto Sans JP", Sans-serif;
+  color: white;
+}
+
+.foot-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7% 5%;
+}
+
+.foot-logo {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+.foot-logo img {
+  width: 100%;
+}
+
+.foot-nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 72%;
+}
+.foot-nav-menu a {
+  color: black;
 }
 /*# sourceMappingURL=style.SCSS.css.map */

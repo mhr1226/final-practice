@@ -84,6 +84,24 @@
   align-items:center;
   position:absolute;
   top:0;
+}
+
+  // ナビゲーションのCSS
+  .nav-menu{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:3%;
+    margin-right:20px;
+    width:75%;
+  }
+
+     // ボタン
+    .head-btn{
+      background-color:$dark-green;
+      height:30px;
+      width:160px;
+    }
 
   // ロゴのCSS
   .logo-img{
@@ -97,26 +115,11 @@
     }
   }
 
-  // ナビゲーションのCSS
-  nav{
-    display:flex;
-    align-items:center;
-    gap:30px;
-    margin-right:20px;
-
-    // ボタン
-    button{
-      background-color:$dark-green;
-      height:30px;
-      width:160px;
-    }
-
-    .nav-link{
-      text-decoration:none;
-      color:white;
-    }
-  }
-}
+      // リンクの装飾
+      .nav-link{
+        text-decoration:none;
+        color:white;
+      }
 
 #concept{
   display:flex;
@@ -266,16 +269,24 @@
     .voice-container{
       display:flex;
       justify-content:space-around;
-      margin:10% 10% 5% 10%;
+      margin:10% 5% 5% 5%;
+      text-align:center;
+
+      h3{
+        color:$dark-green;
+      }
 
       img{
         width:80%;
-        text-align:center;
       }
 
       .voice-content{
         width:33%;
       }
+    }
+
+    .voice-img{
+      text-align:center;
     }
     
     .voice-btn{
@@ -292,7 +303,105 @@
 }
 
 footer{
-  
+  padding:10% 0 0 0;
+  background-image:url('/final-practice/images/courses-back.svg');
+  background-repeat:no-repeat;
+  background-size:100%;
+}
+
+.footer-head{
+  display:flex;
+  justify-content:center;
+  padding:3% 5%;
+
+  img{
+    width:32%;
+  }
+}
+
+.foot-container{
+  display:flex;
+  gap:3%;
+  margin:0 5%;
+}
+
+.foot-left{
+  @include wd-ht-setting(50%,100%);
+}
+
+.foot-right{
+  width:50%;
+  padding:1%;
+}
+
+.foot-left{
+  img{
+    width:100%;
+  }
+
+  ul{
+    list-style:none;
+    padding:0;
+  }
+
+  h3{
+    color:$moss-green;
+  }
+  span{
+    font-size:0.85rem;
+  }
+}
+
+.foot-right{
+  display:flex;
+  align-items:center;
+}
+
+.copy-right{
+    padding:0;
+    margin:0;
+    text-align:center;
+    background-color:$moss-green;
+    color:white;
+}
+
+.foot-btn{
+  padding:3%;
+  margin:5% 0 0 0;
+  border:none;
+  border-radius:5px;
+  background-color:#1B9240;
+  font-family:$noto-sans-jp;
+  color:white;
+  }
+
+
+.foot-nav{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  padding:7% 5%;
+}
+
+.foot-logo{
+  display:flex;
+  align-items:center;
+  width:20%;
+
+  img{
+    width:100%;
+  }
+}
+
+.foot-nav-menu{
+  display:flex;
+  align-items:center;
+  justify-content: space-around;
+  width:72%;
+
+  a{
+    color:black;
+  }
 }
 
 
