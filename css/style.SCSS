@@ -86,6 +86,29 @@
   top:0;
 }
 
+// 下層ページ用のヘッダーCSS
+.head-menu{
+  position:static;
+  margin:1% 0;
+
+  .nav-link{
+    color:$moss-green;
+  }
+
+  .head-btn{
+    color:white;
+  }
+}
+
+/*aboutトップ画像*/
+.about-carousel{
+  width:100%;
+  img{
+    width:100%;
+    
+  }
+}
+
   // ナビゲーションのCSS
   .nav-menu{
     display:flex;
@@ -123,6 +146,7 @@
         color:white;
       }
 
+      /*コンセプト*/
 #concept{
   display:flex;
   justify-content:space-around;
@@ -184,9 +208,56 @@
   }
 }
 
- // courses,voice:headテキスト
 
-// コンテンツを大枠と相対的に関連付ける為のCSS
+/*フロー*/
+#flow{
+  background-image:url('/final-practice/images/about/flow-back.png'),url('/final-practice/images/concept2.png');
+  background-repeat:no-repeat;
+  background-size:25%,30%;
+  background-position:10% 30%,100% 95%;
+  padding:10% 5% 5% 5%;
+
+  >h3,span{
+    color:$moss-green;
+    margin:0 0 0 12%;
+  }
+  span{
+    display:block;
+  }
+}
+
+.flow-container{
+  display:flex;
+  justify-content:space-between;
+  gap:3%;
+  padding:0 12% 12% 12%;
+  
+}
+
+.flow-left{
+  width:40%;
+  display:flex;
+  align-items:center;
+  
+
+  ol{
+    margin:0;
+    line-height:3rem;
+  }
+
+}
+
+.flow-right{
+  width:50%;
+  display:flex;
+  align-items:center;
+
+  img{
+    width:100%;
+  }
+}
+
+/*コース*/
 #courses{
   background-image:url('/final-practice/images/courses-back1.svg'),url('/final-practice/images/courses-back2.svg'),url('/final-practice/images/concept-back.svg');
   background-repeat:no-repeat;
@@ -446,11 +517,11 @@ footer{
   justify-content: flex-end;
   position:fixed;
   bottom:8rem;
-  right:0;
+  right:-0.8rem;
   width:100%;
 
   img{
-    width:80%;
+    width:70%;
   }
 }
 
