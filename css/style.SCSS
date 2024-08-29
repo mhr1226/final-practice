@@ -131,10 +131,13 @@
 
   // ロゴのCSS
   .logo-img{
+    width:25%;
+
+    a{
     display:flex;
     justify-content:center;
     align-items:center;
-    width:25%;
+    }
     img{
       width:clamp(80px,100%,200px);
     }
@@ -435,10 +438,12 @@
       justify-content:center;
       margin:5%;
 
-      button{
-        background-color: white;
+      a{
+        text-decoration:none;
+        color:black;
         border:1px solid black;
         border-radius:5px;
+        padding:0.5%;
       }
     }
 }
@@ -510,13 +515,16 @@ footer{
 }
 
 .foot-btn{
+  display:inline-block;
   padding:3%;
-  margin:5% 0 0 0;
-  border:none;
+  margin:2% 0;
   border-radius:5px;
   background-color:#1B9240;
   font-family:$noto-sans-jp;
+  border:none;
   color:white;
+  text-decoration:none;
+  text-align:center;
   }
 
 
@@ -528,9 +536,12 @@ footer{
 }
 
 .foot-logo{
-  display:flex;
-  align-items:center;
   width:20%;
+
+  a{
+    display:flex;
+    align-items:center;
+  }
 
   img{
     width:100%;

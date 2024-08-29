@@ -109,10 +109,12 @@ progress::-webkit-progress-value {
 }
 
 .logo-img {
+  width: 25%;
+}
+.logo-img a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
 }
 .logo-img img {
   width: clamp(80px, 100%, 200px);
@@ -362,10 +364,12 @@ progress::-webkit-progress-value {
   justify-content: center;
   margin: 5%;
 }
-#voice .voice-btn button {
-  background-color: white;
+#voice .voice-btn a {
+  text-decoration: none;
+  color: black;
   border: 1px solid black;
   border-radius: 5px;
+  padding: 0.5%;
 }
 
 /*フッター*/
@@ -430,13 +434,16 @@ footer {
 }
 
 .foot-btn {
+  display: inline-block;
   padding: 3%;
-  margin: 5% 0 0 0;
-  border: none;
+  margin: 2% 0;
   border-radius: 5px;
   background-color: #1B9240;
   font-family: "Noto Sans JP", Sans-serif;
+  border: none;
   color: white;
+  text-decoration: none;
+  text-align: center;
 }
 
 .foot-nav {
@@ -447,9 +454,11 @@ footer {
 }
 
 .foot-logo {
+  width: 20%;
+}
+.foot-logo a {
   display: flex;
   align-items: center;
-  width: 20%;
 }
 .foot-logo img {
   width: 100%;
