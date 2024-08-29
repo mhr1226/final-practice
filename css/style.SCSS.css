@@ -129,7 +129,7 @@ progress::-webkit-progress-value {
   justify-content: space-around;
   width: 100%;
   height: 100%;
-  padding: 15%;
+  padding: 5% 15% 15% 15%;
   background-image: url("/final-practice/images/concept1.png"), url("/final-practice/images/concept2.png");
   background-size: 35%, 30%;
   background-position-x: 10%, 100%;
@@ -182,13 +182,14 @@ progress::-webkit-progress-value {
   width: 100%;
 }
 
+/*当院について-about-*/
 /*フロー*/
 #flow {
   background-image: url("/final-practice/images/about/flow-back.png"), url("/final-practice/images/concept2.png");
   background-repeat: no-repeat;
   background-size: 25%, 30%;
   background-position: 10% 30%, 100% 95%;
-  padding: 10% 5% 5% 5%;
+  padding: 5% 5% 5% 5%;
 }
 #flow > h3, #flow span {
   color: #468459;
@@ -221,6 +222,38 @@ progress::-webkit-progress-value {
   align-items: center;
 }
 .flow-right img {
+  width: 100%;
+}
+
+/*根本改善のポイント-point-*/
+.point-container {
+  padding: 5%;
+}
+
+.point-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  align-items: center;
+}
+.point-head h3 {
+  width: 60%;
+  color: #468459;
+  text-align: center;
+  margin: 1%;
+}
+
+.point-3columns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5% 0;
+}
+.point-3columns div {
+  width: 30%;
+  text-align: center;
+}
+.point-3columns div img {
   width: 100%;
 }
 
@@ -335,6 +368,7 @@ progress::-webkit-progress-value {
   border-radius: 5px;
 }
 
+/*フッター*/
 footer {
   padding: 10% 0 0 0;
   background-image: url("/final-practice/images/concept-back.svg");
