@@ -34,7 +34,7 @@ header .carousel {
   visibility: hidden;
 }
 header .carousel img {
-  width: clamp(300px, 100%, 1280px);
+  width: clamp(300px, 100%, 1980px);
   height: clamp(150px, 80%, 350px);
   background-size: contain;
 }
@@ -132,7 +132,7 @@ progress::-webkit-progress-value {
   width: 100%;
   height: 100%;
   padding: 5% 15% 15% 15%;
-  background-image: url("/final-practice/images/concept1.png"), url("/final-practice/images/concept2.png");
+  background-image: url("../images/concept1.png"), url("../images/concept2.png");
   background-size: 35%, 30%;
   background-position-x: 10%, 100%;
   background-position-y: 32%, 95%;
@@ -187,7 +187,7 @@ progress::-webkit-progress-value {
 /*当院について-about-*/
 /*フロー*/
 #flow {
-  background-image: url("/final-practice/images/about/flow-back.png"), url("/final-practice/images/concept2.png");
+  background-image: url("../images/about/flow-back.png"), url("../images/concept2.png");
   background-repeat: no-repeat;
   background-size: 25%, 30%;
   background-position: 10% 30%, 100% 95%;
@@ -261,13 +261,56 @@ progress::-webkit-progress-value {
 
 /*コース*/
 #courses {
-  background-image: url("/final-practice/images/courses-back1.svg"), url("/final-practice/images/courses-back2.svg"), url("/final-practice/images/concept-back.svg");
+  background-image: url("../images/courses-back1.svg"), url("../images/courses-back2.svg"), url("../images/courses.back.png");
   background-repeat: no-repeat;
   background-size: 30%, 30%, cover;
   background-position-x: 5%, 100%, 100%;
   background-position-y: 32%, 95%, 100%;
   border-top: 10rem solid transparent;
   padding-bottom: 5%;
+}
+
+/*コース（下層ページ用CSS）*/
+#courses-price {
+  background-color: #fafafa;
+}
+
+/*コースアイテム用のCSS*/
+#insurance {
+  padding-top: 10%;
+}
+
+.courses-container {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+}
+
+.courses-item {
+  width: 40%;
+  padding-left: 10%;
+}
+.courses-item h3, .courses-item span {
+  color: #468459;
+  margin: 5% 0 0 0;
+}
+.courses-item ul {
+  margin: 10% 0;
+}
+.courses-item ul li {
+  line-height: 2.5rem;
+}
+
+.courses-img-item {
+  width: 60%;
+  padding: 0 10% 5% 5%;
+}
+.courses-img-item img {
+  width: 100%;
+}
+
+.courses-item-p {
+  margin: 0;
 }
 
 .courses-top-space {
@@ -375,7 +418,7 @@ progress::-webkit-progress-value {
 /*フッター*/
 footer {
   padding: 10% 0 0 0;
-  background-image: url("/final-practice/images/concept-back.svg");
+  background-image: url("../images/concept-back.svg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
