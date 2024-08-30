@@ -452,11 +452,13 @@ progress::-webkit-progress-value {
 .news-text-container h3 {
   margin-top: 0;
 }
-.news-text-container p {
+
+.news-p {
   display: inline-block;
   margin: 0 5% 0 0;
 }
-.news-text-container span {
+
+.news-span {
   background-color: #468459;
   color: white;
   text-align: center;
@@ -464,6 +466,7 @@ progress::-webkit-progress-value {
   padding: 0.5% 5%;
 }
 
+/*お知らせ：sidebarのCSS*/
 .aside-container {
   width: 25%;
   padding: 5%;
@@ -480,6 +483,7 @@ progress::-webkit-progress-value {
   color: #0C4324;
 }
 
+/*お知らせ：ページNoのCSS*/
 .page-more {
   display: flex;
   gap: 0.5%;
@@ -502,7 +506,37 @@ progress::-webkit-progress-value {
   text-decoration: none;
 }
 
-/*お知らせ：sidebarのCSS*/
+/*news:詳細ページCSS*/
+.page-about-head h2 {
+  color: #0C4324;
+  margin-top: 0;
+}
+.page-about-head .news-about-head-img {
+  margin-top: 5%;
+}
+.page-about-head .news-about-head-img img {
+  width: 100%;
+}
+
+.page-about-text h2, .page-about-text h3, .page-about-text h4 {
+  color: #0C4324;
+}
+
+.page-about-nav {
+  display: flex;
+  justify-content: center;
+}
+.page-about-nav nav {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  gap: 3%;
+}
+.page-about-nav nav a {
+  text-decoration: none;
+  color: black;
+}
+
 /*フッター*/
 footer {
   padding: 10% 0 0 0;

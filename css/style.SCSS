@@ -525,23 +525,22 @@
   h3{
     margin-top:0;
   }
-
-  p{
-    display:inline-block;
-    margin:0 5% 0 0;
-  }
-
-
-
-  span{
-    background-color:$moss-green;
-    color:white;
-    text-align:center;
-    border-radius:5px;
-    padding:0.5% 5%;
-  }
 }
 
+.news-p{
+  display:inline-block;
+  margin:0 5% 0 0;
+}
+
+.news-span{
+  background-color:$moss-green;
+  color:white;
+  text-align:center;
+  border-radius:5px;
+  padding:0.5% 5%;
+}
+
+/*お知らせ：sidebarのCSS*/
 .aside-container{
   width:25%;
   padding:5%;
@@ -561,6 +560,7 @@
   }
 }
 
+/*お知らせ：ページNoのCSS*/
 .page-more{
   display:flex;
   gap:0.5%;
@@ -587,7 +587,45 @@
   }
 }
 
-/*お知らせ：sidebarのCSS*/
+/*news:詳細ページCSS*/
+
+.page-about-head{
+  h2{
+    color:$dark-green;
+    margin-top:0;
+  }
+
+  .news-about-head-img{
+    margin-top:5%;
+
+    img{
+    width:100%;
+  }
+  }
+}
+
+.page-about-text{
+  h2,h3,h4{
+    color:$dark-green;
+  }
+}
+
+.page-about-nav{
+  display:flex;
+  justify-content:center;
+
+  nav{
+    width:70%;
+    display:flex;
+    justify-content:space-around;
+    gap:3%;
+
+    a{
+      text-decoration:none;
+      color:black;
+    }
+  }
+}
 
 
 /*フッター*/
