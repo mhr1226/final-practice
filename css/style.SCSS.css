@@ -275,6 +275,11 @@ progress::-webkit-progress-value {
   background-color: #fafafa;
 }
 
+.courses-top-space2 {
+  width: 100%;
+  height: 5rem;
+}
+
 /*コースアイテム用のCSS*/
 #insurance {
   padding-top: 10%;
@@ -318,6 +323,7 @@ progress::-webkit-progress-value {
   height: 10rem;
 }
 
+/*コース:メインコンテンツ*/
 #courses-main-container .head-h3 {
   display: flex;
   flex-direction: column;
@@ -415,6 +421,88 @@ progress::-webkit-progress-value {
   padding: 0.5%;
 }
 
+/*お知らせ：mainのCSS*/
+.main-container {
+  display: flex;
+}
+
+.article-container {
+  width: 75%;
+  padding: 5%;
+}
+
+.news-container {
+  width: 100%;
+  display: flex;
+  gap: 3%;
+  padding: 2%;
+}
+
+.news-img-container {
+  width: 50%;
+  text-align: center;
+}
+.news-img-container img {
+  width: 100%;
+}
+
+.news-text-container {
+  width: 50%;
+}
+.news-text-container h3 {
+  margin-top: 0;
+}
+.news-text-container p {
+  display: inline-block;
+  margin: 0 5% 0 0;
+}
+.news-text-container span {
+  background-color: #468459;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.5% 5%;
+}
+
+.aside-container {
+  width: 25%;
+  padding: 5%;
+}
+.aside-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+.aside-container ul li {
+  line-height: 2rem;
+}
+.aside-container h3 {
+  margin-top: 0;
+  color: #0C4324;
+}
+
+.page-more {
+  display: flex;
+  gap: 0.5%;
+  justify-content: center;
+  padding-bottom: 10%;
+}
+.page-more span, .page-more a {
+  width: 2%;
+  height: 2%;
+  text-align: center;
+}
+.page-more span:nth-of-type(1) {
+  background-color: #0C4324;
+  color: white;
+}
+.page-more a, .page-more span:nth-of-type(2) {
+  color: #468459;
+}
+.page-more a {
+  text-decoration: none;
+}
+
+/*お知らせ：sidebarのCSS*/
 /*フッター*/
 footer {
   padding: 10% 0 0 0;
@@ -516,6 +604,11 @@ footer {
 }
 .foot-nav-menu a {
   color: black;
+}
+
+/*下層ページのナビゲーションのCSS*/
+#nav-link2 {
+  color: #0C4324;
 }
 
 .back-top {
