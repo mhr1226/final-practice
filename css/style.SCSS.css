@@ -421,6 +421,40 @@ progress::-webkit-progress-value {
   padding: 0.5%;
 }
 
+/*voice詳細：CSS*/
+#voice-about-container {
+  padding: 5% 5% 0 5%;
+}
+
+.voice-content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.voice-content {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5%;
+  padding: 5%;
+}
+
+.voice-about-img {
+  width: 20%;
+}
+.voice-about-img img {
+  width: 100%;
+}
+
+.voice-about-text {
+  width: 60%;
+}
+.voice-about-text h3 {
+  color: #0C4324;
+}
+.voice-about-text p {
+  margin: 0;
+}
+
 /*お知らせ：mainのCSS*/
 .main-container {
   display: flex;
