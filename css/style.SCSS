@@ -720,6 +720,36 @@ textarea{
 }
 }
 
+/*お問い合わせ完了ページ*/
+
+#contact-thanks{
+  padding:5% 10%;
+}
+
+.thanks-body{
+  margin:5% 10%;
+  padding:5% 10%;
+  border:1px solid #CCCCCC;
+  text-align:center;
+  border-radius:3px;
+
+  h3{
+    color:$dark-green;
+  }
+
+  a{
+    width:30%;
+    display:flex;
+    justify-content:center;
+    margin:3% auto 0 auto;
+    background-color:#1B9240;
+    padding:2% 5%;
+    text-decoration:none;
+    color:white;
+    border-radius:5px;
+  }
+}
+
 
 /*フッター*/
 footer{
