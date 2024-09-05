@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho&display=swap');
 
 
+/*共通のCSS*/
+
 *{
   box-sizing:border-box;
 }
@@ -25,6 +27,8 @@
     // font-size:clamp(12px,1rem,16px);
     font-family: $noto-sans-jp;
   }
+
+  /*PC用のCSS*/
 
   // ヘッダー
   header{
@@ -139,7 +143,7 @@
     align-items:center;
     }
     img{
-      width:clamp(80px,100%,200px);
+      width:clamp(150px,100%,300px);
     }
   }
 
@@ -880,7 +884,34 @@ footer{
   }
 }
 
+/*スマホ用のCSS*/
 
+@media screen and(max-width:950px){
+  .nav-menu{
+    display:none;
+  }
+
+  .logo-img{
+    width:60%;
+
+    a{
+      justify-content:flex-start;
+      width:100%;
+    }
+  }
+
+  .sp-bar{
+    margin-right:1rem;
+    .bar-design{
+      width:clamp(20px,30px,40px);
+      border:1px solid $moss-green;
+      margin:20% 0;
+      // &:nth-of-type(3){
+      //   padding-bottom:30%;
+      // }
+    }
+  }
+}
 
 
 

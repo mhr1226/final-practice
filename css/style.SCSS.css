@@ -7,6 +7,7 @@
   min-height: 100vh;
 }
 
+/*共通のCSS*/
 * {
   box-sizing: border-box;
 }
@@ -17,6 +18,7 @@ body {
   font-family: "Noto Sans JP", Sans-serif;
 }
 
+/*PC用のCSS*/
 header {
   position: relative;
   width: 100%;
@@ -117,7 +119,7 @@ progress::-webkit-progress-value {
   align-items: center;
 }
 .logo-img img {
-  width: clamp(80px, 100%, 200px);
+  width: clamp(150px, 100%, 300px);
 }
 
 .nav-link {
@@ -766,5 +768,27 @@ footer {
 }
 .back-top img {
   width: 70%;
+}
+
+/*スマホ用のCSS*/
+@media screen and (max-width: 950px) {
+  .nav-menu {
+    display: none;
+  }
+  .logo-img {
+    width: 60%;
+  }
+  .logo-img a {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .sp-bar {
+    margin-right: 1rem;
+  }
+  .sp-bar .bar-design {
+    width: 30px;
+    border: 1px solid #468459;
+    margin: 20% 0;
+  }
 }
 /*# sourceMappingURL=style.SCSS.css.map */
