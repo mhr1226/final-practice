@@ -1,4 +1,4 @@
-$('.carousel').slick({
+$('.carousel,.sp-carousel').slick({
   autoplay: true,
   infinite: true,
   autoplaySpeed: 3000,

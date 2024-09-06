@@ -30,6 +30,11 @@
 
   /*PC用のCSS*/
 
+  /*SP用カルーセルの非表示*/
+  .sp-carousel-container{
+    display:none;
+  }
+
   // ヘッダー
   header{
     position:relative;
@@ -47,8 +52,7 @@
       visibility: hidden;
 
       img{
-        width:clamp(300px,100%,1980px);
-        height:clamp(150px,80%,350px);
+        width:clamp(550px,100vw,1980px);
         background-size:contain;
     
       }
@@ -59,9 +63,10 @@
     }
   }
 
+  /*PC用プログレスバー*/
   progress {
-    width: 8%;
-    height: 1%;
+    width: clamp(50px,8vw,100px);
+    height:clamp(3px,1vw,5px);
     border-radius: 15px;
     position:absolute;
     right:2%;
@@ -887,6 +892,10 @@ footer{
 /*スマホ用のCSS*/
 
 @media screen and(max-width:950px){
+  
+
+
+
   .nav-menu{
     display:none;
   }
@@ -909,6 +918,43 @@ footer{
       // &:nth-of-type(3){
       //   padding-bottom:30%;
       // }
+    }
+  }
+
+  @media screen and(max-width:300px){
+
+    /*PC用カルーセルの非表示*/
+  .carousel-container{
+    display:none;
+  }
+
+    /*SP用カルーセルの表示*/
+    .sp-carousel-container{
+      display:initial;
+
+      img{
+        width:100%;
+      }
+
+      /*スマホ用プログレスバー*/
+   progress {
+    width: 20%;
+    height: 1%;
+    border-radius: 15px;
+    position:absolute;
+    right:2%;
+    bottom:12%;
+  }
+  
+  progress::-webkit-progress-bar {
+     border-radius: 15px;
+     background-color:white;
+  }
+  
+  progress::-webkit-progress-value {
+    border-radius: 15px;
+    background-color:$moss-green;
+  }
     }
   }
 }
