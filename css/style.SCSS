@@ -1,4 +1,5 @@
 @use "../../../default_mixin_setting/_main_mixin" as *;
+@use "../../../default_mixin_setting/_parts" as *;
 // Merriweather Sans
 // Shippori Mincho
 // Noto Sans JP
@@ -20,10 +21,41 @@
   $grass-green:#96C519;
   $moss-green:#468459;
   $dark-green:#0C4324;
+  $green:#1B9240;
+
+  /*リンクの初期値のリセット*/
+  a{
+    text-decoration:none;
+  }
+
+  /*デフォルトボタン*/
+  .btn{
+    border:1px solid $dark-green;
+    color:$dark-green;
+    padding:1%;
+    border-radius:5px;
+
+    @include media-min(768px){
+      border-color:black;
+      color:black;
+    }
+
+    &:hover{
+      border-color:$green;
+      color:white;
+      background-color:$green;
+    }
+    }
+
+    @include media(768px){
+      /*PC用改行の解除*/
+      .text-br{
+        display:none;
+      }
+    }
 
   body{
-    margin:0;
-    padding:0;
+    @include space-setting(0,0);
     // font-size:clamp(12px,1rem,16px);
     font-family: $noto-sans-jp;
   }
@@ -33,21 +65,50 @@
   /*SP用カルーセルの非表示*/
   .sp-carousel-container{
     display:none;
+    /*SPカルーセルの表示*/
+    @include media(300px){
+      display:initial;
+
+      img{
+        width:100%;
+      }
+
+      /*スマホ用プログレスバー*/
+      progress {
+        width: 20%;
+        height: 1%;
+        border-radius: 15px;
+        position:absolute;
+        right:2%;
+        bottom:12%;
+      }
+  
+      progress::-webkit-progress-bar {
+        border-radius: 15px;
+        background-color:white;
+      }
+  
+      progress::-webkit-progress-value {
+        border-radius: 15px;
+        background-color:$moss-green;
+      }
+    }
   }
 
   // ヘッダー
   header{
     position:relative;
-    @include wd-ht-setting(100%,100%);
 
     .carousel-container{
-      @include wd-ht-setting(100%,100%);
       position:relative;
+      /*PC用カルーセルの非表示*/
+      @include media(300px){
+        display:none;
+      }
     }
 
     // カルーセル全体のdiv
     .carousel{
-      @include wd-ht-setting(100%,100%);
       z-index:-2;
       visibility: hidden;
 
@@ -74,8 +135,8 @@
   }
   
   progress::-webkit-progress-bar {
-     border-radius: 15px;
-     background-color:white;
+    border-radius: 15px;
+    background-color:white;
   }
   
   progress::-webkit-progress-value {
@@ -86,13 +147,11 @@
 
 
 .head-nav{
-  display:flex;
-  width:100%;
+  @include flex(flex,space-between,center);
   margin-top:2%;
-  justify-content:space-between;
-  align-items:center;
   position:absolute;
   top:0;
+  z-index:100;
 }
 
 // 下層ページ用のヘッダーCSS
@@ -109,31 +168,24 @@
   }
 }
 
-/*aboutトップ画像*/
-.about-carousel{
-  width:100%;
-  img{
-    width:100%;
-    
-  }
-}
-
-  // ナビゲーションのCSS
+  /* PCナビゲーションのCSS*/
   .nav-menu{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
+    @include flex(flex,flex-end,center);
     margin-right:2%;
     gap:3%;
     width:75%;
+
+    /*PC用ナビゲーションの非表示*/
+    @include media(949px){
+      display:none;
+    }
   }
 
      // ボタン
     .head-btn{
       background-color:$dark-green;
       border-radius:5px;
-      height:3%;
-      width:25%;
+      @include wd-ht-setting(25%,3%);
       padding:0.25rem;
       text-align:center;
     }
@@ -141,20 +193,112 @@
   // ロゴのCSS
   .logo-img{
     width:25%;
+    margin-left:3%;
+    @include media(949px){
+      width:60%;
+    }
 
     a{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    @include media(949px){
+      justify-content:flex-start;
+      width:100%;
+    }
     }
     img{
       width:clamp(150px,100%,300px);
     }
   }
 
+  /*スマホ用メニューバー*/
+  .sp-bar{
+    margin-right:1rem;
+    position:relative;
+    z-index:100;
+    .bar-design{
+      width:clamp(20px,30px,40px);
+      border:1px solid $moss-green;
+      margin:20% 0;
+    }
+
+    @include media-min(950px){
+      display:none;
+    }
+  }
+  /*スマホ用ナビゲーション*/
+  .sp-nav{
+    position:absolute;
+    top:0;
+    left:0;
+    @include wd-ht-setting(100%,150vh);
+    background-color:white;
+    z-index:99;
+    padding-top:10%;
+    transform:translateX(100%);
+      display:none;
+    transition:all 1s ease;
+
+    &-active{
+      transform:translateX(0);
+      display:initial;
+    }
+
+    /*スマホ用ナビゲーションの非表示*/
+    @include media-min(950px){
+      display:none;
+    }
+  }
+
+  .sp-logo{
+    margin-left:1%;
+  }
+
+  .sp-menu{
+    padding:0 10% 10% 10%;
+
+    h3{
+      color:$dark-green;
+      font-size:clamp(24px,6vw,40px);
+      margin:2% 0;
+    }
+  }
+
+  .sp-nav-link{
+    display:block;
+    color:black;
+    font-size:clamp(16px,3vw,24px);
+    padding:2% 0;
+  }
+
+
+
+
+  // .bar-close{
+  //   position:relative;
+  // }
+  // .close{
+  //   position:absolute;
+  //   right:0;
+  //   z-index:100;
+  //   &:nth-of-type(1){
+  //     transform:rotate(45deg);
+  //   }
+
+  //   &:nth-of-type(2){
+  //     display:none;
+  //   }
+
+  //   &:nth-of-type(3){
+  //     transform:rotate(-45deg);
+  //   }
+  // }
+
+  @include media(767px){
+
+  }
+  
+
       // リンクの装飾
       .nav-link{
-        text-decoration:none;
         color:white;
       }
 
@@ -162,14 +306,17 @@
 #concept{
   display:flex;
   justify-content:space-around;
-  width:100%;
-  height:100%;
+  // @include wd-ht-setting(100%,100%);
   padding:5% 15% 15% 15%;
   background-image:url('../images/concept1.png'),url('../images/concept2.png');
   background-size:35%,30%;
   background-position-x:10%,100%;
   background-position-y:32%,95%;
   background-repeat:no-repeat;
+
+  @include media(768px){
+    flex-direction:column-reverse;
+  }
 
   h3,span{
     color:$moss-green;
@@ -181,6 +328,10 @@
     display:flex;
     flex-direction:column;
     justify-content:center;
+
+    @include media(768px){
+      @include wd-ht-setting(100%,100%);
+    }
   }
   .concept-left{
     gap:5%;
@@ -197,24 +348,17 @@
     .concept-btn{
       display:flex;
       justify-content:flex-end;
+      padding-right:10%;
 
-      a{
-      border:1px solid black;
-      text-decoration:none;
-      color:black;
-      padding:1%;
-      border-radius:5px;
-      margin-right:10%;
+      @include media(768px){
+        justify-content:center;
       }
     }
   }
   .concept-right{
     align-content:center;
     margin-top:10%;
-    > div{
-      width:100%;
-    }
-    img{
+    > div,.concept-right-img{
       width:100%;
     }
   }
@@ -247,10 +391,13 @@
   
 }
 
-.flow-left{
-  width:40%;
+.flow-left,.flow-right{
   display:flex;
   align-items:center;
+}
+
+.flow-left{
+  width:40%;
   
 
   ol{
@@ -262,8 +409,6 @@
 
 .flow-right{
   width:50%;
-  display:flex;
-  align-items:center;
 
   img{
     width:100%;
@@ -291,9 +436,7 @@
 }
 
 .point-3columns{
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
+  @include flex(flex,space-around,center);
   padding:5% 0; 
   div{
     width:30%;
@@ -370,15 +513,11 @@
 /*コース:メインコンテンツ*/
 #courses-main-container{
   .head-h3{
-    display:flex;
     flex-direction:column;
-    justify-content:center;
-    align-items:center;
   
     h3{
       margin:0;
       color:$moss-green;
-      width:30%;
       text-align:center;
   
       &:nth-of-type(2){
@@ -388,11 +527,12 @@
   }
 // 2カラムのボックス
   .courses-flex-box{
-    display:flex;
-    justify-content:center;
-    align-items:center;
     gap:5%;
     padding:5% 5% 3% 5%;
+
+    @include media(768px){
+      flex-direction:column;
+    }
 
     h3{
       color:$dark-green;
@@ -402,20 +542,14 @@
       width:100%;
     }
 
-
+    li{
+      line-height:2.5rem;
+    }
   }
 
   .courses-btn{
     text-align:center;
     margin:2%;
-
-    a{
-      text-decoration:none;
-      color:black;
-      border:1px solid black;
-      border-radius:5px;
-      padding:0.5%;
-    }
   }
 }
 
@@ -423,20 +557,8 @@
 // voice
 #voice{
 
-  .voice-head{
+  .voice-head,.voice-head-img{
     width:100%;
-    img{
-      width:100%;
-    }
-    // div:nth-of-type(2){
-    //   position:absolute;
-    //   bottom:-25%;
-    //   text-align:center;
-    //   width:100%;
-    //   img{
-    //     width:30%;
-    //   }
-    // }
     }
 
     .voice-text-container{
@@ -491,14 +613,6 @@
       display:flex;
       justify-content:center;
       margin:5%;
-
-      a{
-        text-decoration:none;
-        color:black;
-        border:1px solid black;
-        border-radius:5px;
-        padding:0.5%;
-      }
     }
 }
 
@@ -514,8 +628,6 @@
 }
 
 .voice-content{
-  display:flex;
-  justify-content:flex-start;
   gap:5%;
   padding:5%;
 }
@@ -628,10 +740,6 @@
   a,span:nth-of-type(2){
     color:$moss-green;
   }
-
-  a{
-    text-decoration:none;
-  }
 }
 
 /*news:詳細ページCSS*/
@@ -703,16 +811,13 @@
 }
 
 .form-input{
-  width:100%;
-  height:2rem;
+  @include wd-ht-setting(100%,2rem);
   margin:2% 0;
 }
 
 textarea{
-  width:100%;
-  height:8rem;
-  padding:0.5%;
-  margin:2% 0;
+  @include wd-ht-setting(100%,8rem);
+  @include space-setting(2% 0,0.5%);
 }
 
 
@@ -720,8 +825,7 @@ textarea{
   width:100%;
   text-align:center;
   button{
-  width:20%;
-  height:3rem;
+  @include wd-ht-setting(20%,3rem);
   background-color:#1B9240;
   color:white;
   border:none;
@@ -736,8 +840,7 @@ textarea{
 }
 
 .thanks-body{
-  margin:5% 10%;
-  padding:5% 10%;
+  @include space-setting(5% 10%,5% 10%);
   border:1px solid #CCCCCC;
   text-align:center;
   border-radius:3px;
@@ -750,10 +853,8 @@ textarea{
     width:30%;
     display:flex;
     justify-content:center;
-    margin:3% auto 0 auto;
+    @include space-setting(3% auto 0 auto,2% 5%);
     background-color:#1B9240;
-    padding:2% 5%;
-    text-decoration:none;
     color:white;
     border-radius:5px;
   }
@@ -818,8 +919,7 @@ footer{
 }
 
 .copy-right{
-    padding:0;
-    margin:0;
+    @include space-setting(0,0);
     text-align:center;
     background-color:$moss-green;
     color:white;
@@ -827,22 +927,18 @@ footer{
 
 .foot-btn{
   display:inline-block;
-  padding:3%;
-  margin:2% 0;
+  @include space-setting(2% 0,3%);
   border-radius:5px;
   background-color:#1B9240;
   font-family:$noto-sans-jp;
   border:none;
   color:white;
-  text-decoration:none;
   text-align:center;
   }
 
 
 .foot-nav{
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
+  @include flex(flex,space-between,center);
   padding:7% 5%;
 }
 
@@ -860,10 +956,8 @@ footer{
 }
 
 .foot-nav-menu{
-  display:flex;
+  @include flex(flex,space-around,center);
   position:relative;
-  align-items:center;
-  justify-content: space-around;
   width:72%;
 
   a{
@@ -888,76 +982,5 @@ footer{
     width:70%;
   }
 }
-
-/*スマホ用のCSS*/
-
-@media screen and(max-width:950px){
-  
-
-
-
-  .nav-menu{
-    display:none;
-  }
-
-  .logo-img{
-    width:60%;
-
-    a{
-      justify-content:flex-start;
-      width:100%;
-    }
-  }
-
-  .sp-bar{
-    margin-right:1rem;
-    .bar-design{
-      width:clamp(20px,30px,40px);
-      border:1px solid $moss-green;
-      margin:20% 0;
-      // &:nth-of-type(3){
-      //   padding-bottom:30%;
-      // }
-    }
-  }
-
-  @media screen and(max-width:300px){
-
-    /*PC用カルーセルの非表示*/
-  .carousel-container{
-    display:none;
-  }
-
-    /*SP用カルーセルの表示*/
-    .sp-carousel-container{
-      display:initial;
-
-      img{
-        width:100%;
-      }
-
-      /*スマホ用プログレスバー*/
-   progress {
-    width: 20%;
-    height: 1%;
-    border-radius: 15px;
-    position:absolute;
-    right:2%;
-    bottom:12%;
-  }
-  
-  progress::-webkit-progress-bar {
-     border-radius: 15px;
-     background-color:white;
-  }
-  
-  progress::-webkit-progress-value {
-    border-radius: 15px;
-    background-color:$moss-green;
-  }
-    }
-  }
-}
-
 
 

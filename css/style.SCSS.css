@@ -1,10 +1,64 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho&display=swap");
-/*body用のgirdレイアウト*/
-.body-grid {
-  display: grid;
-  grid-template: "head" "main" "foot";
-  min-height: 100vh;
+.sp-2line-bar {
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+}
+.sp-2line-bar .bar-design {
+  width: 30px;
+  border: 1px solid green;
+  margin: 20% 0;
+}
+
+.link-df {
+  text-decoration: none;
+  color: black;
+}
+
+/*flexのデフォルトパーツ*/
+/*レスポンシブのデフォルトミックスイン*/
+/*width:100%*/
+.w-max {
+  width: 100%;
+}
+
+/*width:50%;*/
+.w-half {
+  width: 50%;
+}
+
+.w-h-max {
+  width: 100%;
+  height: 100%;
+}
+
+/*ボタンデフォルト*/
+.btn-df {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.5%;
+}
+
+/*flex デフォルト*/
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*flex space-between*/
+.flex-sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*flex space-around*/
+.flex-ar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /*共通のCSS*/
@@ -12,6 +66,36 @@
   box-sizing: border-box;
 }
 
+/*リンクの初期値のリセット*/
+a {
+  text-decoration: none;
+}
+
+/*デフォルトボタン*/
+.btn {
+  border: 1px solid #0C4324;
+  color: #0C4324;
+  padding: 1%;
+  border-radius: 5px;
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    border-color: black;
+    color: black;
+  }
+}
+.btn:hover {
+  border-color: #1B9240;
+  color: white;
+  background-color: #1B9240;
+}
+
+@media screen and (max-width: 768px) {
+  /*PC用改行の解除*/
+  .text-br {
+    display: none;
+  }
+}
 body {
   margin: 0;
   padding: 0;
@@ -22,21 +106,47 @@ body {
 /*SP用カルーセルの非表示*/
 .sp-carousel-container {
   display: none;
+  /*SPカルーセルの表示*/
+}
+@media screen and (max-width: 300px) {
+  .sp-carousel-container {
+    display: initial;
+    /*スマホ用プログレスバー*/
+  }
+  .sp-carousel-container img {
+    width: 100%;
+  }
+  .sp-carousel-container progress {
+    width: 20%;
+    height: 1%;
+    border-radius: 15px;
+    position: absolute;
+    right: 2%;
+    bottom: 12%;
+  }
+  .sp-carousel-container progress::-webkit-progress-bar {
+    border-radius: 15px;
+    background-color: white;
+  }
+  .sp-carousel-container progress::-webkit-progress-value {
+    border-radius: 15px;
+    background-color: #468459;
+  }
 }
 
 header {
   position: relative;
-  width: 100%;
-  height: 100%;
 }
 header .carousel-container {
-  width: 100%;
-  height: 100%;
   position: relative;
+  /*PC用カルーセルの非表示*/
+}
+@media screen and (max-width: 300px) {
+  header .carousel-container {
+    display: none;
+  }
 }
 header .carousel {
-  width: 100%;
-  height: 100%;
   z-index: -2;
   visibility: hidden;
 }
@@ -70,12 +180,12 @@ progress::-webkit-progress-value {
 
 .head-nav {
   display: flex;
-  width: 100%;
-  margin-top: 2%;
   justify-content: space-between;
   align-items: center;
+  margin-top: 2%;
   position: absolute;
   top: 0;
+  z-index: 100;
 }
 
 .head-menu {
@@ -89,46 +199,113 @@ progress::-webkit-progress-value {
   color: white;
 }
 
-/*aboutトップ画像*/
-.about-carousel {
-  width: 100%;
-}
-.about-carousel img {
-  width: 100%;
-}
-
+/* PCナビゲーションのCSS*/
 .nav-menu {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
+  align-items: center;
   margin-right: 2%;
   gap: 3%;
   width: 75%;
+  /*PC用ナビゲーションの非表示*/
+}
+@media screen and (max-width: 949px) {
+  .nav-menu {
+    display: none;
+  }
 }
 
 .head-btn {
   background-color: #0C4324;
   border-radius: 5px;
-  height: 3%;
   width: 25%;
+  height: 3%;
   padding: 0.25rem;
   text-align: center;
 }
 
 .logo-img {
   width: 25%;
+  margin-left: 3%;
 }
-.logo-img a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 949px) {
+  .logo-img {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 949px) {
+  .logo-img a {
+    justify-content: flex-start;
+    width: 100%;
+  }
 }
 .logo-img img {
   width: clamp(150px, 100%, 300px);
 }
 
+/*スマホ用メニューバー*/
+.sp-bar {
+  margin-right: 1rem;
+  position: relative;
+  z-index: 100;
+}
+.sp-bar .bar-design {
+  width: 30px;
+  border: 1px solid #468459;
+  margin: 20% 0;
+}
+@media screen and (min-width: 950px) {
+  .sp-bar {
+    display: none;
+  }
+}
+
+/*スマホ用ナビゲーション*/
+.sp-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150vh;
+  background-color: white;
+  z-index: 99;
+  padding-top: 10%;
+  transform: translateX(100%);
+  display: none;
+  transition: all 1s ease;
+  /*スマホ用ナビゲーションの非表示*/
+}
+.sp-nav-active {
+  transform: translateX(0);
+  display: initial;
+}
+@media screen and (min-width: 950px) {
+  .sp-nav {
+    display: none;
+  }
+}
+
+.sp-logo {
+  margin-left: 1%;
+}
+
+.sp-menu {
+  padding: 0 10% 10% 10%;
+}
+.sp-menu h3 {
+  color: #0C4324;
+  font-size: clamp(24px, 6vw, 40px);
+  margin: 2% 0;
+}
+
+.sp-nav-link {
+  display: block;
+  color: black;
+  font-size: clamp(16px, 3vw, 24px);
+  padding: 2% 0;
+}
+
 .nav-link {
-  text-decoration: none;
   color: white;
 }
 
@@ -136,14 +313,17 @@ progress::-webkit-progress-value {
 #concept {
   display: flex;
   justify-content: space-around;
-  width: 100%;
-  height: 100%;
   padding: 5% 15% 15% 15%;
   background-image: url("../images/concept1.png"), url("../images/concept2.png");
   background-size: 35%, 30%;
   background-position-x: 10%, 100%;
   background-position-y: 32%, 95%;
   background-repeat: no-repeat;
+}
+@media screen and (max-width: 768px) {
+  #concept {
+    flex-direction: column-reverse;
+  }
 }
 #concept h3, #concept span {
   color: #468459;
@@ -155,6 +335,12 @@ progress::-webkit-progress-value {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  #concept .concept-left, #concept .concept-right {
+    width: 100%;
+    height: 100%;
+  }
 }
 #concept .concept-left {
   gap: 5%;
@@ -171,23 +357,18 @@ progress::-webkit-progress-value {
 #concept .concept-left .concept-btn {
   display: flex;
   justify-content: flex-end;
+  padding-right: 10%;
 }
-#concept .concept-left .concept-btn a {
-  border: 1px solid black;
-  text-decoration: none;
-  color: black;
-  padding: 1%;
-  border-radius: 5px;
-  margin-right: 10%;
+@media screen and (max-width: 768px) {
+  #concept .concept-left .concept-btn {
+    justify-content: center;
+  }
 }
 #concept .concept-right {
   align-content: center;
   margin-top: 10%;
 }
-#concept .concept-right > div {
-  width: 100%;
-}
-#concept .concept-right img {
+#concept .concept-right > div, #concept .concept-right .concept-right-img {
   width: 100%;
 }
 
@@ -215,10 +396,13 @@ progress::-webkit-progress-value {
   padding: 0 12% 12% 12%;
 }
 
-.flow-left {
-  width: 40%;
+.flow-left, .flow-right {
   display: flex;
   align-items: center;
+}
+
+.flow-left {
+  width: 40%;
 }
 .flow-left ol {
   margin: 0;
@@ -227,8 +411,6 @@ progress::-webkit-progress-value {
 
 .flow-right {
   width: 50%;
-  display: flex;
-  align-items: center;
 }
 .flow-right img {
   width: 100%;
@@ -332,26 +514,24 @@ progress::-webkit-progress-value {
 
 /*コース:メインコンテンツ*/
 #courses-main-container .head-h3 {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 #courses-main-container .head-h3 h3 {
   margin: 0;
   color: #468459;
-  width: 30%;
   text-align: center;
 }
 #courses-main-container .head-h3 h3:nth-of-type(2) {
   margin-top: 1%;
 }
 #courses-main-container .courses-flex-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 5%;
   padding: 5% 5% 3% 5%;
+}
+@media screen and (max-width: 768px) {
+  #courses-main-container .courses-flex-box {
+    flex-direction: column;
+  }
 }
 #courses-main-container .courses-flex-box h3 {
   color: #0C4324;
@@ -359,22 +539,15 @@ progress::-webkit-progress-value {
 #courses-main-container .courses-flex-box img {
   width: 100%;
 }
+#courses-main-container .courses-flex-box li {
+  line-height: 2.5rem;
+}
 #courses-main-container .courses-btn {
   text-align: center;
   margin: 2%;
 }
-#courses-main-container .courses-btn a {
-  text-decoration: none;
-  color: black;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 0.5%;
-}
 
-#voice .voice-head {
-  width: 100%;
-}
-#voice .voice-head img {
+#voice .voice-head, #voice .voice-head-img {
   width: 100%;
 }
 #voice .voice-text-container {
@@ -420,13 +593,6 @@ progress::-webkit-progress-value {
   justify-content: center;
   margin: 5%;
 }
-#voice .voice-btn a {
-  text-decoration: none;
-  color: black;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 0.5%;
-}
 
 /*voice詳細：CSS*/
 #voice-about-container {
@@ -439,8 +605,6 @@ progress::-webkit-progress-value {
 }
 
 .voice-content {
-  display: flex;
-  justify-content: flex-start;
   gap: 5%;
   padding: 5%;
 }
@@ -543,9 +707,6 @@ progress::-webkit-progress-value {
 .page-more a, .page-more span:nth-of-type(2) {
   color: #468459;
 }
-.page-more a {
-  text-decoration: none;
-}
 
 /*news:詳細ページCSS*/
 .page-about-head h2 {
@@ -611,8 +772,8 @@ progress::-webkit-progress-value {
 textarea {
   width: 100%;
   height: 8rem;
-  padding: 0.5%;
   margin: 2% 0;
+  padding: 0.5%;
 }
 
 .submit {
@@ -648,9 +809,8 @@ textarea {
   display: flex;
   justify-content: center;
   margin: 3% auto 0 auto;
-  background-color: #1B9240;
   padding: 2% 5%;
-  text-decoration: none;
+  background-color: #1B9240;
   color: white;
   border-radius: 5px;
 }
@@ -709,8 +869,8 @@ footer {
 }
 
 .copy-right {
-  padding: 0;
   margin: 0;
+  padding: 0;
   text-align: center;
   background-color: #468459;
   color: white;
@@ -718,14 +878,13 @@ footer {
 
 .foot-btn {
   display: inline-block;
-  padding: 3%;
   margin: 2% 0;
+  padding: 3%;
   border-radius: 5px;
   background-color: #1B9240;
   font-family: "Noto Sans JP", Sans-serif;
   border: none;
   color: white;
-  text-decoration: none;
   text-align: center;
 }
 
@@ -749,9 +908,9 @@ footer {
 
 .foot-nav-menu {
   display: flex;
-  position: relative;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
+  position: relative;
   width: 72%;
 }
 .foot-nav-menu a {
@@ -773,57 +932,5 @@ footer {
 }
 .back-top img {
   width: 70%;
-}
-
-/*スマホ用のCSS*/
-@media screen and (max-width: 950px) {
-  .nav-menu {
-    display: none;
-  }
-  .logo-img {
-    width: 60%;
-  }
-  .logo-img a {
-    justify-content: flex-start;
-    width: 100%;
-  }
-  .sp-bar {
-    margin-right: 1rem;
-  }
-  .sp-bar .bar-design {
-    width: 30px;
-    border: 1px solid #468459;
-    margin: 20% 0;
-  }
-}
-@media screen and (max-width: 950px) and (max-width: 300px) {
-  /*PC用カルーセルの非表示*/
-  .carousel-container {
-    display: none;
-  }
-  /*SP用カルーセルの表示*/
-  .sp-carousel-container {
-    display: initial;
-    /*スマホ用プログレスバー*/
-  }
-  .sp-carousel-container img {
-    width: 100%;
-  }
-  .sp-carousel-container progress {
-    width: 20%;
-    height: 1%;
-    border-radius: 15px;
-    position: absolute;
-    right: 2%;
-    bottom: 12%;
-  }
-  .sp-carousel-container progress::-webkit-progress-bar {
-    border-radius: 15px;
-    background-color: white;
-  }
-  .sp-carousel-container progress::-webkit-progress-value {
-    border-radius: 15px;
-    background-color: #468459;
-  }
 }
 /*# sourceMappingURL=style.SCSS.css.map */
