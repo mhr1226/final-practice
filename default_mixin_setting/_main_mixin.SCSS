@@ -1,0 +1,57 @@
+
+// flexboxの基本プロパティ
+// flex-wrap,justify-content,align-itemsの一括指定できるプロパティ
+@mixin flex-df-setting($display:flex,$wrap:null,$justify:null,$align-i:null){
+  display:$display;
+
+  // 記述が不要な時にCSSにコンパイルされるのを避ける為の記述
+  // 以下mixinも同様の理由で記述
+  @if $wrap != null{
+    flex-wrap:$wrap;
+  }
+
+  @if $justify != null{
+    justify-content:$justify;
+  }
+
+  @if $align-i != null{
+    align-items:$align-i;
+  }
+}
+
+// margin,paddingを一括で指定出来るプロパティ
+@mixin space-setting($mg:null,$pd:null){
+  @if $mg != null{
+    margin:$mg;
+  }
+
+  @if $pd != null{
+    padding:$pd;
+  }
+}
+
+// height,widthを一括で指定できるプロパティ
+@mixin wd-ht-setting($wd:null,$ht:null){
+  @if $wd != null{
+    width:$wd;
+  }
+
+  @if $ht != null{
+    height:$ht;
+  }
+}
+
+// font-size,font-weight,text-alignを一括で指定できるプロパティ
+@mixin font-setting($f-size:null,$f-weight:null,$t-align:null){
+  @if $f-size != null{
+      font-size:$f-size;
+  }
+
+  @if $f-weight != null{
+      font-weight:$f-weight;
+  }
+
+  @if $t-align != null{
+      text-align:$t-align;
+  }
+}
