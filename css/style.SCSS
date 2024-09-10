@@ -10,6 +10,8 @@
 
 *{
   box-sizing:border-box;
+  
+
 }
 // font-familyセット
   $merriweather-sans:'Merriweather Sans',Sans-serif;
@@ -514,15 +516,12 @@
 #courses-main-container{
   .head-h3{
     flex-direction:column;
+    width:70%;
+    margin:0 auto;
   
     h3{
-      margin:0;
       color:$moss-green;
       text-align:center;
-  
-      &:nth-of-type(2){
-        margin-top:1%;
-      }
     }
   }
 // 2カラムのボックス
@@ -557,34 +556,77 @@
 // voice
 #voice{
 
-  .voice-head,.voice-head-img{
+  .voice-head-img-pc,.voice-head-img-sp{
     width:100%;
     }
 
-    .voice-text-container{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      width:100%;
+    .voice-head-img-sp{
+      display:none;
+    }
 
-      .head-h3{
-      width:30%;
-      position:relative;
-      top:-2rem;
-      left:0;
-      text-align:center;
-      color:$moss-green;
+    @include media(320px){
+      .voice-head-img-pc{
+        display:none;
+      }
 
-      h3{
-        margin:0;
-        &:nth-of-type(2){
-          margin-top:3%;
-        }
+      .voice-head-img-sp{
+        display:initial;
       }
     }
+
+
+    .voice-head-h3{
+      width:70%;
+      margin:0 auto;
+      text-align:center;
+      color:$moss-green;
     }
 
     
+    .voice-text-img{
+      width:clamp(12px,0.5rem,24px);
+      
+      &:nth-of-type(1){
+        margin-right:1%;
+      }
+
+      &:nth-of-type(2){
+        margin-left:1%;
+      }
+    }
+
+    
+    
+    // .voice-text-container{
+    //   display:flex;
+    //   flex-direction:column;
+    //   align-items:center;
+    //   width:100%;
+
+    //   .head-h3{
+    //   
+
+    //   h3{
+    //     margin:0;
+    //     &:nth-of-type(2){
+    //       margin-top:3%;
+    //     }
+    //   }
+    // }
+    // }
+
+    .voice-first-container{
+      position:relative;
+      top:-3rem;
+
+      @include media(500px){
+        top:-1.5rem;
+      }
+
+      @include media(320px){
+        top:-3rem;
+      }
+    }
 
     .voice-container{
       display:flex;
@@ -592,16 +634,29 @@
       margin:3% 5% 5% 5%;
       text-align:center;
 
+      @include media(768px){
+        flex-direction:column;
+      }
+
       h3{
         color:$dark-green;
       }
 
       img{
         width:80%;
+
+        @include media(768px){
+          width:60%;
+        }
       }
 
       .voice-content{
         width:33%;
+
+        @include media(768px){
+          width:80%;
+          margin:0 auto;
+        }
       }
     }
 
@@ -866,7 +921,16 @@ footer{
   padding:10% 0 0 0;
   background-image:url('../images/concept-back.svg');
   background-repeat:no-repeat;
-  background-size:100%;
+  background-size:cover;
+  height:100%;
+
+  @include media(768px){
+    padding-top:30%;
+  }
+}
+
+#foot{
+  height:100%;
 }
 
 .footer-head{
@@ -884,20 +948,32 @@ footer{
   display:flex;
   gap:3%;
   margin:0 5%;
+
+  @include media(768px){
+    flex-direction:column;
+  }
 }
 
 .foot-left{
   @include wd-ht-setting(50%,100%);
+
+  @include media(768px){
+    width:100%;
+  }
 }
 
 .foot-right{
   width:50%;
   padding:1%;
+  @include media(768px){
+    width:100%;
+  }
 }
 
 .foot-left{
-  img{
+  .foot-img{
     width:100%;
+    
   }
 
   ul{
@@ -934,16 +1010,26 @@ footer{
   border:none;
   color:white;
   text-align:center;
+  @include media(768px){
+    width:100%;
+  }
   }
 
 
 .foot-nav{
   @include flex(flex,space-between,center);
   padding:7% 5%;
+  @include media(768px){
+    flex-direction:column;
+  }
 }
 
 .foot-logo{
   width:20%;
+  @include media(768px){
+    width:50%;
+    margin:5% auto;
+  }
 
   a{
     display:flex;
@@ -960,8 +1046,17 @@ footer{
   position:relative;
   width:72%;
 
+  @include media(768px){
+    flex-direction:column;
+    width:100%;
+  }
+
   a{
     color:black;
+    @include media(768px){
+      margin:3% auto;
+      color:$dark-green;
+    }
   }
 }
 
